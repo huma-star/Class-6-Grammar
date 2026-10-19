@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مرکبِ ناقص کی اقسام</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--c1:#ff7043;--c2:#29b6f6;--c3:#43a047;--c4:#ab47bc;--ink:#2b2350;--card:#ffffffee}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu',serif;color:var(--ink);line-height:2.2;
+ background:linear-gradient(160deg,#fff4d6,#ffe0f0 45%,#d9f0ff);min-height:100vh;overflow-x:hidden;font-size:20px}
+.bg span{position:fixed;font-size:34px;opacity:.18;animation:float 9s ease-in-out infinite;z-index:0;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-30px) rotate(12deg)}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:99}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,#5b3cc4,#c0398b);color:#fff;padding:4px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;box-shadow:0 4px 14px #0003}
+header h1{margin:0;font-size:22px;font-weight:700}
+.pill{background:#ffffff30;border-radius:30px;padding:0 14px;font-size:17px;white-space:nowrap}
+.bar{height:10px;background:#ffffff40;border-radius:10px;width:110px;display:inline-block;vertical-align:middle;overflow:hidden;margin:0 6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#ffe066,#ff9f1c);width:0;transition:width .5s}
+nav{position:sticky;top:50px;z-index:19;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:6px 8px;background:#fffffff0;backdrop-filter:blur(6px);box-shadow:0 3px 10px #0001}
+nav button{font-family:inherit;font-size:18px;border:0;border-radius:30px;padding:0 16px;background:#efe9ff;color:#5b3cc4;cursor:pointer;transition:.2s;line-height:2}
+nav button:hover{transform:translateY(-2px)}
+nav button.on{background:#5b3cc4;color:#fff;box-shadow:0 4px 0 #3a2494}
+main{position:relative;z-index:1;max-width:1050px;margin:auto;padding:14px}
+section{display:none;animation:pop .5s}
+section.on{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.card{background:var(--card);border-radius:24px;padding:16px 22px;margin:14px 0;box-shadow:0 8px 24px #4b2a8a22;border:3px solid #fff}
+h2{font-size:30px;margin:6px 0;color:#5b3cc4}
+h3{font-size:24px;margin:4px 0}
+.btn{font-family:inherit;font-size:20px;border:0;border-radius:18px;padding:2px 22px;color:#fff;background:linear-gradient(#7e57ff,#5b3cc4);box-shadow:0 5px 0 #3a2494;cursor:pointer;transition:.15s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #3a2494}
+.btn.g{background:linear-gradient(#5fd068,#2e9e3a);box-shadow:0 5px 0 #1d6e26}
+.btn.r{background:linear-gradient(#ff7a7a,#e03c3c);box-shadow:0 5px 0 #9c2222}
+.btn.o{background:linear-gradient(#ffb74d,#f57c00);box-shadow:0 5px 0 #a35200}
+/* hero */
+.hero{text-align:center;background:linear-gradient(135deg,#6a4cff,#c0398b);color:#fff;border-radius:30px;padding:20px;position:relative;overflow:hidden}
+.hero h2{color:#fff;font-size:44px;text-shadow:0 4px 0 #0003}
+.owl{font-size:90px;display:inline-block;animation:bob 2.5s ease-in-out infinite;cursor:pointer;filter:drop-shadow(0 8px 6px #0004)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(4deg)}}
+.bubble{background:#fff;color:var(--ink);border-radius:20px;padding:4px 20px;display:inline-block;margin:6px;position:relative;box-shadow:0 5px 14px #0003}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.kind{display:inline-block;border-radius:14px;padding:0 14px;color:#fff;font-weight:700;margin:2px}
+.k1{background:var(--c1)}.k2{background:var(--c2)}.k3{background:var(--c3)}.k4{background:var(--c4)}
+/* tf game */
+#tfBox{text-align:center}
+#tfText{font-size:38px;background:#fff8dc;border:4px dashed #f5b700;border-radius:22px;padding:6px 20px;display:inline-block;margin:10px;min-width:260px}
+.fb{min-height:60px;font-size:21px}
+.good{color:#1b8a2d;font-weight:700}.bad{color:#d32f2f;font-weight:700}
+.shake{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.jump{animation:jump .5s}
+@keyframes jump{0%,100%{transform:scale(1)}40%{transform:scale(1.18) rotate(-3deg)}}
+/* tree */
+.tree{display:flex;flex-direction:column;align-items:center;gap:0}
+.node{font-family:inherit;font-size:20px;border:0;border-radius:16px;padding:0 18px;cursor:pointer;color:#fff;margin:4px;transition:.2s;box-shadow:0 5px 0 #0003;line-height:2.1}
+.node:hover{transform:translateY(-4px) scale(1.06)}
+.node.sel{outline:4px solid #ffd54f;transform:scale(1.1)}
+.t-top{background:#6fb81f}.t-mid{background:#1e9bd7}.t-tam{background:#f58a1f}.t-sub{background:#4a7fd0}.t-leaf{background:#3f8fd9;font-size:18px}
+.t-nq{background:#f58a1f}
+.arrow{color:#9a7bff;font-size:22px;line-height:1;animation:bob 2s infinite}
+.branches{display:grid;grid-template-columns:1fr 1.3fr;gap:12px;width:100%;margin-top:6px}
+.branch{background:#ffffff99;border-radius:20px;padding:10px;text-align:center;border:3px dashed #ffd180}
+.leafgrid{display:flex;flex-wrap:wrap;justify-content:center}
+#info{min-height:130px;background:linear-gradient(135deg,#fff9e0,#ffe9f3);border-right:10px solid #7e57ff}
+.hint{color:#8a7aa8;font-size:17px}
+@media(max-width:700px){.branches{grid-template-columns:1fr}body{font-size:18px}.hero h2{font-size:32px}}
+/* learn */
+.tabs4{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tabs4 button{font-family:inherit;font-size:22px;border:0;border-radius:20px;color:#fff;padding:4px;cursor:pointer;box-shadow:0 6px 0 #0003;transition:.2s}
+.tabs4 button.on{transform:translateY(5px);box-shadow:0 1px 0 #0003;outline:4px solid #ffd54f}
+.def{font-size:23px;background:#fff;border-radius:18px;padding:10px 18px;border-right:10px solid var(--tc)}
+.ex{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}
+.exc{background:#fff;border-radius:20px;padding:6px 16px 10px;border:4px solid var(--tc);cursor:pointer;text-align:center;transition:.2s;min-width:180px;box-shadow:0 6px 0 var(--tc)}
+.exc:hover{transform:translateY(-4px)}
+.parts{display:flex;justify-content:center;gap:6px;font-size:34px}
+.part{padding:0 6px;border-radius:12px;transition:.3s}
+.part small{display:block;font-size:15px;line-height:1.4;opacity:0;height:0;transition:.3s;color:#fff;border-radius:8px;padding:0 5px;margin-top:2px}
+.exc.open .part small{opacity:1;height:auto;padding:0 5px}
+.exc.open .p1{background:var(--tc)}.exc.open .p2{background:#455a64}.exc.open .p0{background:#fbc02d}
+.p1 small{background:var(--tc)}.p2 small{background:#455a64}.p0 small{background:#fbc02d}
+.exc.open .part{color:#fff}
+.exc.open .p0{color:#333}
+.tip{margin-top:14px;background:#fff3c4;border-radius:18px;padding:6px 16px;border:3px dotted #f5b700}
+.say{background:none;border:0;font-size:22px;cursor:pointer}
+/* games */
+.gtabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:6px}
+.gtabs button{font-family:inherit;font-size:19px;border:0;border-radius:20px;padding:0 18px;background:#e8e0ff;color:#4527a0;cursor:pointer}
+.gtabs button.on{background:#4527a0;color:#fff}
+.game{display:none}.game.on{display:block}
+.tiles,.slots{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.tile{font-family:inherit;font-size:30px;border:0;border-radius:16px;padding:0 20px;background:#ffd54f;box-shadow:0 5px 0 #c79a00;cursor:pointer;transition:.15s}
+.tile:hover{transform:translateY(-3px)}
+.tile.used{opacity:.25;pointer-events:none}
+.slot{min-width:100px;height:62px;border:4px dashed #b39ddb;border-radius:16px;font-size:30px;text-align:center;background:#fff;line-height:2}
+.slot.f{border-style:solid;border-color:#7e57ff;background:#ede7ff}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+.opt{font-family:inherit;font-size:22px;border:0;border-radius:18px;padding:4px 10px;cursor:pointer;color:#fff;box-shadow:0 6px 0 #0003;transition:.15s}
+.opt:hover{transform:translateY(-3px)}
+.opt.qz{background:#fff;color:var(--ink);border:3px solid #b39ddb;box-shadow:0 5px 0 #b39ddb}
+.opt.ok{background:#43a047!important;color:#fff!important;border-color:#2e7d32}
+.opt.no{background:#e53935!important;color:#fff!important;border-color:#b71c1c}
+.big{font-size:42px;text-align:center;background:#fff8dc;border-radius:20px;padding:4px;border:4px dashed #f5b700}
+.timer{height:14px;background:#e0d7ff;border-radius:10px;overflow:hidden;margin:6px 0}
+.timer i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#ff5252,#ffd740,#69f0ae);transition:width .1s linear}
+.stats{display:flex;justify-content:space-around;flex-wrap:wrap;font-size:21px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:520px;margin:10px auto}
+.mcol{display:flex;flex-direction:column;gap:10px}
+.mi{font-family:inherit;font-size:26px;border:0;border-radius:16px;padding:0 10px;cursor:pointer;background:#fff;border:3px solid #b39ddb;box-shadow:0 5px 0 #b39ddb;transition:.15s}
+.mi.sel{background:#ffe082;border-color:#f5b700;transform:scale(1.07)}
+.mi.done{background:#c8e6c9;border-color:#43a047;box-shadow:none;pointer-events:none}
+.qprog{display:flex;gap:6px;justify-content:center;margin-bottom:6px}
+.qprog i{width:22px;height:12px;border-radius:8px;background:#d1c4e9}
+.qprog i.c{background:#43a047}.qprog i.w{background:#e53935}.qprog i.n{background:#7e57ff}
+.qtext{font-size:30px;text-align:center}
+/* win */
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.badge{background:#eee;border-radius:20px;text-align:center;padding:6px;filter:grayscale(1);opacity:.55;transition:.4s}
+.badge.got{filter:none;opacity:1;background:linear-gradient(#fff4b0,#ffd54f);box-shadow:0 6px 16px #f5b70088;animation:jump .8s}
+.badge b{font-size:44px;display:block;line-height:1.4}
+.cert{border:10px double #c9a227;background:#fffdf3;text-align:center;border-radius:20px;padding:14px}
+.cert input{font-family:inherit;font-size:26px;text-align:center;border:0;border-bottom:3px solid #c9a227;background:transparent;width:70%;outline:0}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);background:#2b2350;color:#fff;border-radius:30px;padding:2px 24px;z-index:100;transition:.4s;font-size:20px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media print{header,nav,.noprint,.bg{display:none!important}section{display:none}#win{display:block}}
+</style>
+</head>
+<body>
+<div class="bg"><span style="top:12%;right:5%">⭐</span><span style="top:40%;left:4%;animation-delay:1s">📘</span><span style="top:70%;right:8%;animation-delay:2s">✏️</span><span style="top:85%;left:10%;animation-delay:3s">🌟</span><span style="top:25%;left:45%;animation-delay:4s">🎈</span></div>
+<canvas id="confetti"></canvas>
+
+<header>
+  <h1>🦉 قواعد کی دنیا</h1>
+  <div><span class="pill">⭐ <span id="pts">0</span> پوائنٹس</span> <span class="pill">درجہ: <span id="lvl">نیا طالب علم</span><span class="bar"><i id="lvbar"></i></span></span></div>
+</header>
+<nav id="nav">
+  <button data-s="home" class="on">🏠 شروعات</button>
+  <button data-s="map">🗺️ علمی نقشہ</button>
+  <button data-s="learn">📚 اقسام سیکھیں</button>
+  <button data-s="games">🎮 کھیل</button>
+  <button data-s="quiz">🏆 کوئز</button>
+  <button data-s="win">🎖️ انعامات</button>
+</nav>
+
+<main>
+<!-- HOME -->
+<section id="home" class="on">
+  <div class="hero">
+    <div class="owl" id="owl">🦉</div>
+    <h2>مرکبِ ناقص کی اقسام</h2>
+    <div class="bubble" id="owlSay">السلام علیکم دوست! میں ہوں اُلّو استاد۔ آؤ مل کر سیکھیں اور انعام جیتیں! 🎉</div><br>
+    <button class="btn o" onclick="go('map')">🚀 سفر شروع کریں</button>
+  </div>
+  <div class="card">
+    <h2>🤔 پہلے یہ بتاؤ: بات پوری ہے یا ادھوری؟</h2>
+    <p>جب دو یا زیادہ لفظ مل کر <b>پوری بات</b> بتائیں تو اسے <span class="kind k1">مرکبِ تام (جملہ)</span> کہتے ہیں، اور جب <b>بات ادھوری</b> رہ جائے تو اسے <span class="kind k4">مرکبِ ناقص</span> کہتے ہیں۔</p>
+    <div id="tfBox">
+      <div id="tfText">…</div>
+      <div class="fb" id="tfFb">درست جواب پر بٹن دباؤ 👇</div>
+      <button class="btn g" onclick="tf(true)">✅ پوری بات (تام)</button>
+      <button class="btn r" onclick="tf(false)">❌ ادھوری بات (ناقص)</button>
+      <div class="hint" id="tfCount"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map">
+  <div class="card">
+    <h2>🗺️ علمِ نحو کا نقشہ</h2>
+    <p class="hint">کسی بھی ڈبے پر دباؤ اور اس کی معلومات نیچے دیکھو۔ سنہری اقسام پر "تفصیل" کا بٹن بھی آئے گا!</p>
+    <div class="tree">
+      <button class="node t-top" data-k="nahw">علمِ نحو</button>
+      <div class="arrow">▼</div>
+      <button class="node t-mid" data-k="kalam">کلام / مرکب</button>
+      <div class="arrow">▼</div>
+      <div class="branches">
+        <div class="branch">
+          <button class="node t-tam" data-k="tam">مرکبِ تام / مرکبِ مفید / جملہ</button>
+          <div class="arrow">▼</div>
+          <div class="leafgrid">
+            <div><button class="node t-sub" data-k="maani">بلحاظِ معنی</button><div class="arrow">▼</div>
+              <button class="node t-leaf" data-k="khabar">خبریہ جملہ</button><button class="node t-leaf" data-k="insha">انشائیہ جملہ</button></div>
+            <div><button class="node t-sub" data-k="surat">بلحاظِ صورت</button><div class="arrow">▼</div>
+              <button class="node t-leaf" data-k="mufrad">مفرد جملہ</button><button class="node t-leaf" data-k="murak">مرکب جملہ</button></div>
+          </div>
+        </div>
+        <div class="branch">
+          <button class="node t-nq" data-k="naqis">مرکبِ ناقص</button>
+          <div class="arrow">▼</div>
+          <div class="leafgrid">
+            <button class="node k1" data-k="izafi" style="font-size:19px">مرکبِ اضافی</button>
+            <button class="node k3" data-k="tausifi" style="font-size:19px">مرکبِ توصیفی</button>
+            <button class="node t-leaf" data-k="adadi">مرکبِ عددی</button>
+            <button class="node k2" data-k="atfi" style="font-size:19px">مرکبِ عطفی</button>
+            <button class="node t-leaf" data-k="zarfi">مرکبِ ظرفی</button>
+            <button class="node t-leaf" data-k="ishari">مرکبِ اشاری</button>
+            <button class="node t-leaf" data-k="badli">مرکبِ بدلی</button>
+            <button class="node t-leaf" data-k="mauzu">تابع موضوع</button>
+            <button class="node k4" data-k="muhmal" style="font-size:19px">تابع مہمل</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card" id="info"><h3>👆 کوئی ڈبہ چنو</h3><p class="hint">یہاں اس کی معلومات آئے گی۔</p></div>
+  <div class="card"><h3>🔤 علمِ صرف اور علمِ ہجا</h3>
+    <p><span class="kind t-top" style="background:#6fb81f">علمِ ہجا</span> حروف کا علم ہے۔ <span class="kind" style="background:#6fb81f">علمِ صرف</span> میں لفظ (کلمہ) اور بے معنی لفظ (مہمل) کا مطالعہ ہوتا ہے۔ جب یہ لفظ آپس میں ملتے ہیں تو <b>علمِ نحو</b> کا کام شروع ہوتا ہے!</p></div>
+</section>
+
+<!-- LEARN -->
+<section id="learn">
+  <div class="card">
+    <h2>📚 مرکبِ ناقص کی چار اہم اقسام</h2>
+    <div class="tabs4" id="tabs4"></div>
+  </div>
+  <div class="card" id="learnBody"></div>
+</section>
+
+<!-- GAMES -->
+<section id="games">
+  <div class="gtabs">
+    <button class="on" data-g="g1">🧩 لفظ جوڑو</button>
+    <button data-g="g2">⚡ تیز ہاتھ</button>
+    <button data-g="g3">🔗 تابع مہمل جوڑی</button>
+  </div>
+
+  <div class="card game on" id="g1">
+    <h2>🧩 لفظ جوڑو</h2>
+    <p>بکھرے ہوئے لفظوں کو صحیح ترتیب سے دباؤ (دائیں سے بائیں) اور مرکب بناؤ، پھر اس کی قسم بتاؤ!</p>
+    <div class="stats"><span>پہیلی: <b id="p1n">1</b>/8</span><span>درست: <b id="p1s">0</b></span></div>
+    <div class="slots" id="slots"></div>
+    <div class="tiles" id="tiles"></div>
+    <div class="fb" id="p1fb"></div>
+    <div id="p1type" style="display:none">
+      <h3 style="text-align:center">یہ کون سا مرکب ہے؟</h3>
+      <div class="opts" id="p1opts"></div>
+    </div>
+    <div style="text-align:center"><button class="btn o" id="p1reset">🔄 دوبارہ</button> <button class="btn" id="p1next" style="display:none">اگلی پہیلی ⬅</button></div>
+  </div>
+
+  <div class="card game" id="g2">
+    <h2>⚡ تیز ہاتھ (وقت کے اندر!)</h2>
+    <p>ہر مرکب کی صحیح قسم جلدی چنو۔ مسلسل صحیح جوابات پر <b>کومبو</b> بنتا ہے اور زیادہ پوائنٹس ملتے ہیں! 🔥</p>
+    <div class="stats"><span>سوال: <b id="sn">0</b>/10</span><span>🔥 کومبو: <b id="sc">0</b></span><span>اسکور: <b id="ss">0</b></span></div>
+    <div class="timer"><i id="stimer"></i></div>
+    <div class="big" id="sword">تیار ہو؟</div>
+    <div class="opts">
+      <button class="opt k1" data-t="izafi">مرکبِ اضافی</button>
+      <button class="opt k2" data-t="atfi">مرکبِ عطفی</button>
+      <button class="opt k3" data-t="tausifi">مرکبِ توصیفی</button>
+      <button class="opt k4" data-t="muhmal">تابع مہمل</button>
+    </div>
+    <div class="fb" id="sfb"></div>
+    <div style="text-align:center"><button class="btn g" id="sstart">▶️ کھیل شروع کریں</button></div>
+  </div>
+
+  <div class="card game" id="g3">
+    <h2>🔗 تابع مہمل کی جوڑیاں</h2>
+    <p>دائیں طرف کا بامعنی لفظ چنو، پھر بائیں طرف اس کا ساتھی بے معنی لفظ چنو۔ جیسے <b>روٹی ← ووٹی</b></p>
+    <div class="stats"><span>جوڑیاں ملیں: <b id="mc">0</b>/6</span></div>
+    <div class="mgrid"><div class="mcol" id="mL"></div><div class="mcol" id="mR"></div></div>
+    <div class="fb" id="mfb" style="text-align:center"></div>
+    <div style="text-align:center"><button class="btn o" id="mreset">🔄 دوبارہ کھیلیں</button></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="card" id="quizBox"></div>
+</section>
+
+<!-- WIN -->
+<section id="win">
+  <div class="card"><h2>🎖️ میرے بیجز</h2><div class="badges" id="badges"></div></div>
+  <div class="card cert">
+    <h2>🏅 سرٹیفکیٹِ کامیابی 🏅</h2>
+    <p>اپنا نام لکھو:</p>
+    <input id="name" placeholder="یہاں نام لکھیں">
+    <p style="font-size:24px">شاباش <b id="cname">پیارے طالب علم</b>!<br>آپ نے <b>مرکبِ ناقص کی اقسام</b> میں <b id="cpts">0</b> پوائنٹس حاصل کیے۔<br><span id="clv">درجہ: نیا طالب علم</span></p>
+    <button class="btn noprint" onclick="window.print()">🖨️ پرنٹ کریں</button>
+  </div>
+</section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let st={pts:0,badges:{},seen:{},mapSeen:{}};
+try{const s=JSON.parse(localStorage.getItem('naqis6')||'null');if(s)st=Object.assign(st,s)}catch(e){}
+const save=()=>{try{localStorage.setItem('naqis6',JSON.stringify(st))}catch(e){}};
+
+/* sound */
+let ac;function tone(f,d,t='sine',v=.15,delay=0){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=t;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ac.destination);const n=ac.currentTime+delay;o.start(n);g.gain.exponentialRampToValueAtTime(.001,n+d);o.stop(n+d)}catch(e){}}
+const sOk=()=>{tone(660,.15,'triangle');tone(880,.25,'triangle',.15,.12)};
+const sNo=()=>{tone(200,.3,'sawtooth',.1)};
+const sWin=()=>[523,659,784,1047].forEach((f,i)=>tone(f,.3,'triangle',.15,i*.13));
+
+/* toast */
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)}
+
+/* points & levels */
+const LV=['نیا طالب علم','ہوشیار طالب علم','قواعد کا ماہر','نحو کا استاد','قواعد کا بادشاہ 👑'];
+function ui(){const L=Math.min(LV.length-1,Math.floor(st.pts/60));$('#pts').textContent=st.pts;$('#lvl').textContent=LV[L];$('#lvbar').style.width=(L==LV.length-1?100:(st.pts%60)/60*100)+'%';$('#cpts').textContent=st.pts;$('#clv').textContent='درجہ: '+LV[L];renderBadges()}
+function add(n){const old=Math.floor(st.pts/60);st.pts+=n;save();ui();if(Math.floor(st.pts/60)>old){toast('🎉 نیا درجہ: '+LV[Math.min(LV.length-1,Math.floor(st.pts/60))]);boom()}}
+
+/* badges */
+const BD=[['map','🗺️','نقشہ شناس'],['learn','📚','قسم ماہر'],['puz','🧩','پہیلی باز'],['speed','⚡','تیز ہاتھ'],['match','🔗','جوڑی ساز'],['quiz','🏆','کوئز چیمپئن']];
+function badge(k){if(st.badges[k])return;st.badges[k]=1;save();const b=BD.find(x=>x[0]==k);toast('🎖️ نیا بیج: '+b[2]);boom();sWin();ui()}
+function renderBadges(){$('#badges').innerHTML=BD.map(b=>`<div class="badge ${st.badges[b[0]]?'got':''}"><b>${b[1]}</b>${b[2]}</div>`).join('')}
+
+/* confetti */
+const cv=$('#confetti'),cx=cv.getContext('2d');let P=[];
+function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
+function boom(){for(let i=0;i<120;i++)P.push({x:innerWidth/2,y:innerHeight/3,vx:(Math.random()-.5)*16,vy:Math.random()*-14-3,s:Math.random()*8+4,c:`hsl(${Math.random()*360},90%,60%)`,r:Math.random()*6,l:130});if(P.length==120)loop()}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.r+=.2;p.l--;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6);cx.restore()});P=P.filter(p=>p.l>0&&p.y<innerHeight+20);if(P.length)requestAnimationFrame(loop);else cx.clearRect(0,0,cv.width,cv.height)}
+
+/* nav */
+function go(s){$$('section').forEach(e=>e.classList.toggle('on',e.id==s));$$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.s==s));scrollTo({top:0,behavior:'smooth'});if(s=='quiz'&&!quizStarted)startQuiz()}
+$$('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.s));
+const owlLines=['شاباش! تم بہت ہوشیار ہو! 🌟','میں ہر وقت تمہارے ساتھ ہوں! 🦉','کا، کی، کے دیکھو تو اضافت یاد کرو! 🔎','اور / و آئے تو عطف! ➕','صفت + موصوف = توصیفی! 🎨','روٹی ووٹی… ووٹی بے معنی ہے! 😄'];
+$('#owl').onclick=()=>{$('#owlSay').textContent=owlLines[Math.floor(Math.random()*owlLines.length)];$('#owl').classList.add('jump');setTimeout(()=>$('#owl').classList.remove('jump'),500);tone(520,.15,'triangle')};
+
+/* ===== True/False intro ===== */
+const TF=[['علی کتاب پڑھتا ہے',1],['علی کی کتاب',0],['بچے میدان میں کھیل رہے ہیں',1],['ٹھنڈا پانی',0],['دن اور رات',0],['پھول کھلا ہے',1],['اونچا پہاڑ',0],['روٹی ووٹی',0]];
+let tfi=0,tfq=shuf(TF),tfd=false;
+function tfShow(){if(tfi>=tfq.length){$('#tfText').textContent='🎉 شاباش! ';$('#tfFb').innerHTML='<span class="good">تم مرکبِ تام اور ناقص میں فرق سمجھ گئے! اب علمی نقشے کی طرف چلو۔</span>';return}$('#tfText').textContent=tfq[tfi][0];$('#tfCount').textContent=(tfi+1)+' / '+tfq.length;tfd=false}
+function tf(a){if(tfi>=tfq.length)return;if(tfd)return;tfd=true;const c=!!tfq[tfi][1]===a;const b=$('#tfText');
+  if(c){sOk();add(5);b.classList.add('jump');$('#tfFb').innerHTML='<span class="good">✅ بالکل صحیح! '+(tfq[tfi][1]?'یہ پوری بات ہے، یعنی مرکبِ تام۔':'اس سے بات پوری نہیں ہوتی، یہ مرکبِ ناقص ہے۔')+' (+5)</span>'}
+  else{sNo();b.classList.add('shake');$('#tfFb').innerHTML='<span class="bad">❌ دوبارہ سوچو! '+(tfq[tfi][1]?'یہ تو پوری بات ہے (مرکبِ تام)۔':'یہاں بات ادھوری ہے (مرکبِ ناقص)۔')+'</span>'}
+  setTimeout(()=>{b.classList.remove('jump','shake');tfi++;tfShow()},1700)}
+tfShow();
+
+/* ===== MAP ===== */
+const MI={
+nahw:['علمِ نحو','وہ علم جس میں سیکھتے ہیں کہ لفظ آپس میں مل کر مرکب اور جملے کیسے بناتے ہیں۔','—'],
+kalam:['کلام / مرکب','دو یا دو سے زیادہ لفظوں کا مجموعہ۔ اس کی دو بڑی قسمیں ہیں: مرکبِ تام اور مرکبِ ناقص۔','—'],
+tam:['مرکبِ تام / مرکبِ مفید / جملہ','ایسا مرکب جس سے پوری بات سمجھ آ جائے۔','علی کتاب پڑھتا ہے۔'],
+naqis:['مرکبِ ناقص','ایسا مرکب جس سے بات پوری نہیں ہوتی، سننے والا مزید سننا چاہتا ہے۔ اس کی بہت سی اقسام ہیں۔','علی کی کتاب … (پھر؟)'],
+maani:['بلحاظِ معنی','مطلب کے لحاظ سے جملے کی دو قسمیں: خبریہ اور انشائیہ۔','—'],
+surat:['بلحاظِ صورت','بناوٹ کے لحاظ سے جملے کی دو قسمیں: مفرد اور مرکب۔','—'],
+khabar:['خبریہ جملہ','جس میں کوئی خبر یا اطلاع دی جائے۔','آج موسم اچھا ہے۔'],
+insha:['انشائیہ جملہ','جس میں سوال، حکم، دعا یا خواہش ہو۔','کیا تم نے کھانا کھا لیا؟'],
+mufrad:['مفرد جملہ','ایک سادہ سی مکمل بات والا جملہ۔','بچہ پڑھ رہا ہے۔'],
+murak:['مرکب جملہ','جو ایک سے زیادہ جملوں کے ملنے سے بنے۔','اگر محنت کرو گے تو کامیاب ہو گے۔'],
+izafi:['مرکبِ اضافی','دو اسموں میں تعلق پیدا کرنا اضافت ہے۔','محمود کی گھڑی','izafi'],
+tausifi:['مرکبِ توصیفی','اسم کے ساتھ اس کی صفت بھی شامل ہو۔','اونچا پہاڑ','tausifi'],
+atfi:['مرکبِ عطفی','دو اسموں کو ملانے کے لیے "و" یا "اور" آئے۔','دن اور رات','atfi'],
+muhmal:['تابع مہمل','ایک لفظ بامعنی اور دوسرا بے معنی ہو۔','چائے شائے','muhmal'],
+adadi:['مرکبِ عددی','گنتی اور اس کی گنی جانے والی چیز کا مجموعہ۔','پانچ کتابیں'],
+ishari:['مرکبِ اشاری','اشارے کے لفظ اور اسم کا مجموعہ۔','یہ کتاب، وہ لڑکا'],
+zarfi:['مرکبِ ظرفی','اس کی تفصیل آپ آگے کے اسباق میں پڑھیں گے۔','—'],
+badli:['مرکبِ بدلی','اس کی تفصیل آپ آگے کے اسباق میں پڑھیں گے۔','—'],
+mauzu:['تابع موضوع','اس کی تفصیل آپ آگے کے اسباق میں پڑھیں گے۔','—']};
+$$('.node').forEach(n=>n.onclick=()=>{$$('.node').forEach(x=>x.classList.remove('sel'));n.classList.add('sel');const d=MI[n.dataset.k];tone(600,.12,'triangle');
+ $('#info').innerHTML=`<h3>${d[0]}</h3><p>${d[1]}</p>${d[2]!='—'?`<p>📝 مثال: <span class="kind k4" style="font-size:24px">${d[2]}</span></p>`:''}${d[3]?`<button class="btn g" onclick="openLearn('${d[3]}')">📖 تفصیل دیکھیں</button>`:''}`;
+ if(!st.mapSeen[n.dataset.k]){st.mapSeen[n.dataset.k]=1;add(2);if(Object.keys(st.mapSeen).length>=6)badge('map')}});
+
+/* ===== LEARN ===== */
+const T={
+izafi:{n:'مرکبِ اضافی',c:'#ff7043',icon:'👜',def:'دو اسموں میں تعلق پیدا کرنا <b>اضافت</b> کہلاتا ہے۔ جس سے تعلق پیدا کیا گیا ہو وہ <b>«مضاف الیہ»</b> اور جس کا تعلق پیدا کیا گیا ہو وہ <b>«مضاف»</b> کہلاتا ہے۔ اس مجموعے کو مرکبِ اضافی کہتے ہیں۔',
+ ex:[[['محمود','مضاف الیہ',1],['کی','نشانِ اضافت',0],['گھڑی','مضاف',2]],[['اردو','مضاف الیہ',1],['کی','نشانِ اضافت',0],['کتاب','مضاف',2]],[['اللہ','مضاف الیہ',1],['کا','نشانِ اضافت',0],['بندہ','مضاف',2]]],
+ tip:'گھڑی کا تعلق محمود سے ہے، اس لیے گھڑی «مضاف» اور محمود «مضاف الیہ» ہے۔ کا، کی، کے دیکھ کر پہچانو!'},
+atfi:{n:'مرکبِ عطفی',c:'#29b6f6',icon:'🔗',def:'یہ وہ مرکب ہے جو دو اسموں کو آپس میں ملانے کا کام دیتا ہے۔ ان دو اسموں کو ملانے کے لیے <b>«و»</b> یا <b>«اور»</b> استعمال ہوتا ہے۔',
+ ex:[[['دن','اسم',1],['اور','حرفِ عطف',0],['رات','اسم',2]],[['صبح','اسم',1],['و','حرفِ عطف',0],['شام','اسم',2]],[['پھل','اسم',1],['اور','حرفِ عطف',0],['سبزیاں','اسم',2]]],
+ tip:'«اور» اور «و» گوند کی طرح ہیں جو دو اسموں کو جوڑ دیتے ہیں! 🧴'},
+tausifi:{n:'مرکبِ توصیفی',c:'#43a047',icon:'🎨',def:'وہ مرکب ہے جس میں اسم کے ساتھ ساتھ اس کی <b>صفت</b> بھی شامل ہو۔ اس طرح صفت اور <b>موصوف</b> کے مجموعے کو مرکبِ توصیفی کہتے ہیں۔',
+ ex:[[['اونچا','صفت',1],['پہاڑ','موصوف',2]],[['سنسان','صفت',1],['گلی','موصوف',2]],[['ٹھنڈا','صفت',1],['پانی','موصوف',2]]],
+ tip:'صفت وہ ہے جو بتائے کیسا؟ اونچا کیسا پہاڑ؟ — اونچا پہاڑ! ⛰️'},
+muhmal:{n:'تابع مہمل',c:'#ab47bc',icon:'🤪',def:'اردو میں عام بول چال اور محاورات میں ایسے مرکب الفاظ بولے جاتے ہیں جن کا ایک لفظ <b>بامعنی</b> اور دوسرا لفظ <b>بے معنی</b> ہوتا ہے۔ جو لفظ بامعنی ہے اسے <b>متبوع</b> کہتے ہیں اور بے معنی کو <b>کلمۂ مہمل</b>۔',
+ ex:[[['روٹی','متبوع (بامعنی)',1],['ووٹی','مہمل (بے معنی)',2]],[['پانی','متبوع (بامعنی)',1],['وانی','مہمل (بے معنی)',2]],[['چائے','متبوع (بامعنی)',1],['شائے','مہمل (بے معنی)',2]],[['غلط','متبوع (بامعنی)',1],['سلط','مہمل (بے معنی)',2]]],
+ tip:'مہمل لفظ کا کوئی مطلب نہیں، وہ صرف بامعنی لفظ کے پیچھے پیچھے چلتا ہے، اسی لیے «تابع» ہے! 🐾'}};
+let curT='izafi';
+function buildTabs(){$('#tabs4').innerHTML=Object.entries(T).map(([k,v])=>`<button data-k="${k}" style="background:${v.c}">${v.icon}<br>${v.n}</button>`).join('');
+ $$('#tabs4 button').forEach(b=>b.onclick=()=>showT(b.dataset.k))}
+function showT(k){curT=k;const t=T[k];$$('#tabs4 button').forEach(b=>b.classList.toggle('on',b.dataset.k==k));
+ $('#learnBody').style.setProperty('--tc',t.c);
+ $('#learnBody').innerHTML=`<h2 style="color:${t.c}">${t.icon} ${t.n}</h2><div class="def">${t.def} <button class="say" title="سنو" onclick="speak(this.parentNode.textContent)">🔊</button></div>
+ <h3 style="margin-top:12px">👆 مثال پر دباؤ، حصے کھل جائیں گے</h3>
+ <div class="ex">${t.ex.map(e=>`<div class="exc" style="--tc:${t.c}"><div class="parts">${e.map(p=>`<div class="part p${p[2]}">${p[0]}<small>${p[1]}</small></div>`).join('')}</div></div>`).join('')}</div>
+ <div class="tip">💡 ${t.tip}</div>`;
+ $$('#learnBody .exc').forEach(e=>e.onclick=()=>{e.classList.toggle('open');tone(700,.1,'triangle')});
+ if(!st.seen[k]){st.seen[k]=1;add(5);if(Object.keys(st.seen).length>=4)badge('learn')}}
+function speak(t){try{const u=new SpeechSynthesisUtterance(t);u.lang='ur-PK';speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function openLearn(k){go('learn');showT(k)}
+buildTabs();showT('izafi');
+
+/* ===== GAMES tabs ===== */
+$$('.gtabs button').forEach(b=>b.onclick=()=>{$$('.gtabs button').forEach(x=>x.classList.toggle('on',x==b));$$('.game').forEach(g=>g.classList.toggle('on',g.id==b.dataset.g))});
+
+/* G1 puzzles */
+const PZ=[[['محمود','کی','گھڑی'],'izafi'],[['اردو','کی','کتاب'],'izafi'],[['دن','اور','رات'],'atfi'],[['صبح','و','شام'],'atfi'],[['اونچا','پہاڑ'],'tausifi'],[['ٹھنڈا','پانی'],'tausifi'],[['چائے','شائے'],'muhmal'],[['پانی','وانی'],'muhmal']];
+const TN={izafi:'مرکبِ اضافی',atfi:'مرکبِ عطفی',tausifi:'مرکبِ توصیفی',muhmal:'تابع مہمل'};
+let pq=shuf(PZ),pi=0,ps=0,pfill=0,pw=[];
+function p1load(){if(pi>=pq.length){$('#slots').innerHTML='';$('#tiles').innerHTML='';$('#p1type').style.display='none';$('#p1fb').innerHTML=`<div style="text-align:center;font-size:26px" class="good">🎉 سب پہیلیاں حل! درست: ${ps}/${pq.length}</div>`;$('#p1next').style.display='none';badge('puz');boom();return}
+ const [w,t]=pq[pi];pw=w;pfill=0;$('#p1n').textContent=pi+1;$('#p1s').textContent=ps;$('#p1fb').textContent='';$('#p1type').style.display='none';$('#p1next').style.display='none';
+ $('#slots').innerHTML=w.map(()=>'<div class="slot"></div>').join('');
+ $('#tiles').innerHTML=shuf(w.map((x,i)=>[x,i])).map(([x,i])=>`<button class="tile" data-i="${i}">${x}</button>`).join('');
+ $$('#tiles .tile').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;const expect=pw[pfill];if(b.textContent==expect){const s=$$('#slots .slot')[pfill];s.textContent=expect;s.classList.add('f');b.classList.add('used');pfill++;sOk();
+   if(pfill==pw.length){add(10);$('#p1fb').innerHTML='<span class="good">✅ واہ! مرکب بن گیا: «'+pw.join(' ')+'» (+10)</span>';boom();showType(t)}}
+  else{sNo();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);$('#p1fb').innerHTML='<span class="bad">❌ یہ اس جگہ کا لفظ نہیں، دوبارہ سوچو! (دائیں سے شروع کرو)</span>'}})}
+function showType(t){$('#p1type').style.display='block';$('#p1opts').innerHTML=Object.entries(TN).map(([k,v])=>`<button class="opt k${{izafi:1,atfi:2,tausifi:3,muhmal:4}[k]}" data-k="${k}">${v}</button>`).join('');
+ $$('#p1opts .opt').forEach(b=>b.onclick=()=>{if(b.dataset.k==t){sOk();add(10);ps++;$('#p1s').textContent=ps;$('#p1fb').innerHTML+='<br><span class="good">🌟 قسم بھی صحیح! (+10)</span>';$('#p1opts').innerHTML='';$('#p1next').style.display='inline-block'}else{sNo();b.classList.add('shake');b.style.opacity=.4;b.disabled=true}})}
+$('#p1next').onclick=()=>{pi++;p1load()};
+$('#p1reset').onclick=()=>{pq=shuf(PZ);pi=0;ps=0;p1load()};
+p1load();
+
+/* G2 speed */
+const SP=[['محمود کی گھڑی','izafi'],['اردو کی کتاب','izafi'],['اللہ کا بندہ','izafi'],['علی کا بستہ','izafi'],['دن اور رات','atfi'],['صبح و شام','atfi'],['پھل اور سبزیاں','atfi'],['کتاب اور قلم','atfi'],['اونچا پہاڑ','tausifi'],['سنسان گلی','tausifi'],['ٹھنڈا پانی','tausifi'],['نیلا آسمان','tausifi'],['روٹی ووٹی','muhmal'],['پانی وانی','muhmal'],['چائے شائے','muhmal'],['غلط سلط','muhmal']];
+let sq=[],sn=0,sc=0,ss=0,tm=null,tl=100,sact=false;
+function sNext(){clearInterval(tm);if(sn>=10){sact=false;$('#sword').textContent='🏁 کھیل ختم! اسکور: '+ss;$('#sfb').innerHTML='<span class="good">شاباش! دوبارہ کھیل کر زیادہ اسکور بناؤ۔</span>';$('#sstart').style.display='inline-block';$('#sstart').textContent='🔁 دوبارہ کھیلیں';badge('speed');boom();return}
+ $('#sword').textContent=sq[sn][0];$('#sn').textContent=sn+1;tl=100;$('#stimer').style.width='100%';
+ tm=setInterval(()=>{tl-=1.4;$('#stimer').style.width=Math.max(tl,0)+'%';if(tl<=0){clearInterval(tm);sans(null)}},100)}
+function sans(k){if(!sact)return;clearInterval(tm);const c=sq[sn][1];
+ if(k==c){sOk();sc++;const g=10+Math.min(sc,5)*2+(tl>60?5:0);ss+=g;add(Math.ceil(g/2));$('#sfb').innerHTML=`<span class="good">✅ صحیح! +${g} 🔥</span>`;$('#sword').classList.add('jump')}
+ else{sNo();sc=0;$('#sfb').innerHTML=`<span class="bad">${k?'❌ غلط!':'⏰ وقت ختم!'} صحیح جواب: ${TN[c]}</span>`;$('#sword').classList.add('shake')}
+ $('#sc').textContent=sc;$('#ss').textContent=ss;sact=false;
+ setTimeout(()=>{$('#sword').classList.remove('jump','shake');sn++;sact=true;sNext()},1100)}
+$$('#g2 .opt').forEach(b=>b.onclick=()=>sans(b.dataset.t));
+$('#sstart').onclick=()=>{sq=shuf(SP).slice(0,10);sn=0;sc=0;ss=0;$('#sc').textContent=0;$('#ss').textContent=0;$('#sfb').textContent='';sact=true;$('#sstart').style.display='none';sNext()};
+
+/* G3 match */
+const MP=[['روٹی','ووٹی'],['پانی','وانی'],['چائے','شائے'],['غلط','سلط'],['چاول','واول'],['کتاب','وتاب']];
+let mSel=null,mDone=0;
+function mBuild(){mDone=0;mSel=null;$('#mc').textContent=0;$('#mfb').textContent='';
+ $('#mL').innerHTML=MP.map((p,i)=>`<button class="mi" data-i="${i}" data-s="L">${p[0]}</button>`).join('');
+ $('#mR').innerHTML=shuf(MP.map((p,i)=>[p[1],i])).map(([w,i])=>`<button class="mi" data-i="${i}" data-s="R">${w}</button>`).join('');
+ $$('.mi').forEach(b=>b.onclick=()=>{if(b.dataset.s=='L'){$$('#mL .mi').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');mSel=b;tone(600,.1,'triangle')}
+  else{if(!mSel){$('#mfb').innerHTML='<span class="bad">پہلے دائیں طرف سے بامعنی لفظ چنو 👉</span>';return}
+   if(mSel.dataset.i==b.dataset.i){sOk();mSel.classList.remove('sel');mSel.classList.add('done');b.classList.add('done');mSel=null;mDone++;add(6);$('#mc').textContent=mDone;$('#mfb').innerHTML='<span class="good">✅ شاباش! (+6)</span>';
+    if(mDone==6){$('#mfb').innerHTML='<span class="good">🎉 ساری جوڑیاں مل گئیں!</span>';badge('match')}}
+   else{sNo();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);$('#mfb').innerHTML='<span class="bad">❌ یہ اس کا ساتھی نہیں! یاد رکھو مہمل لفظ کے ساتھ کا ساتھی ہوتا ہے</span>'}}})}
+$('#mreset').onclick=mBuild;mBuild();
+
+/* ===== QUIZ ===== */
+const QZ=[
+['«علی کا بستہ» کس مرکب کی مثال ہے؟','مرکبِ اضافی',['مرکبِ عطفی','مرکبِ توصیفی','تابع مہمل'],'کا کے ذریعے دو اسموں (علی اور بستہ) میں تعلق پیدا ہوا۔'],
+['«صبح و شام» میں حرفِ عطف کون سا ہے؟','و',['صبح','شام','کوئی نہیں'],'«و» یا «اور» دو اسموں کو ملانے کا کام دیتا ہے۔'],
+['«اونچا پہاڑ» میں موصوف کون سا لفظ ہے؟','پہاڑ',['اونچا','دونوں','کوئی نہیں'],'اونچا صفت ہے اور پہاڑ موصوف۔'],
+['«محمود کی گھڑی» میں مضاف الیہ کون ہے؟','محمود',['گھڑی','کی','دونوں'],'جس سے تعلق پیدا کیا جائے وہ مضاف الیہ ہے۔'],
+['«چائے شائے» میں بے معنی لفظ کون سا ہے؟','شائے',['چائے','دونوں','کوئی نہیں'],'شائے مہمل ہے اور چائے متبوع۔'],
+['جب دو اسموں کو ملانے کے لیے «اور» آئے تو وہ مرکب کیا کہلاتا ہے؟','مرکبِ عطفی',['مرکبِ اضافی','مرکبِ توصیفی','تابع مہمل'],'اور / و حرفِ عطف ہیں۔'],
+['مرکبِ ناقص کا کیا مطلب ہے؟','بات ادھوری رہ جائے',['بات پوری ہو جائے','جملہ بن جائے','کوئی بھی لفظ بے معنی ہو'],'مرکبِ تام سے بات پوری ہوتی ہے جبکہ ناقص میں ادھوری۔'],
+['«سنسان گلی» میں صفت کون سی ہے؟','سنسان',['گلی','دونوں','کوئی نہیں'],'سنسان بتاتا ہے کہ گلی کیسی ہے۔'],
+['ان میں سے مرکبِ تام (جملہ) کون سا ہے؟','بچے کھیل رہے ہیں',['ٹھنڈا پانی','اردو کی کتاب','دن اور رات'],'اس سے پوری بات سمجھ آتی ہے۔'],
+['«پھل اور سبزیاں» کون سا مرکب ہے؟','مرکبِ عطفی',['مرکبِ اضافی','مرکبِ توصیفی','تابع مہمل'],'دو اسم اور کے ذریعے ملے ہیں۔']];
+let quizStarted=false,qi=0,qs=0,qres=[],qlock=false;
+function startQuiz(){quizStarted=true;qi=0;qs=0;qres=[];qrender()}
+function qrender(){const b=$('#quizBox');
+ if(qi>=QZ.length){const stars=qs>=9?3:qs>=7?2:qs>=5?1:0;b.innerHTML=`<div style="text-align:center"><h2>🏁 کوئز مکمل!</h2><div style="font-size:60px">${'⭐'.repeat(stars)||'💪'}</div><p style="font-size:28px">آپ کا اسکور: <b>${qs}/${QZ.length}</b></p><p>${stars==3?'ماشاءاللہ! آپ تو ماہر نکلے! 🏆':stars>=1?'بہت اچھے! تھوڑی مزید مشق سے پہلی پوزیشن! 👍':'کوئی بات نہیں، اقسام دوبارہ پڑھ کر پھر کوشش کرو! 📚'}</p><button class="btn g" onclick="startQuiz()">🔁 دوبارہ کھیلیں</button> <button class="btn o" onclick="go('win')">🎖️ انعامات دیکھیں</button></div>`;
+  if(qs>=8)badge('quiz');if(stars)boom();return}
+ const q=QZ[qi];qlock=false;
+ b.innerHTML=`<div class="qprog">${QZ.map((_,i)=>`<i class="${i<qi?(qres[i]?'c':'w'):i==qi?'n':''}"></i>`).join('')}</div><div class="qtext">${qi+1}) ${q[0]}</div><div class="opts" id="qo">${shuf([q[1],...q[2]]).map(o=>`<button class="opt qz">${o}</button>`).join('')}</div><div class="fb" id="qfb" style="text-align:center"></div>`;
+ $$('#qo .opt').forEach(o=>o.onclick=()=>{if(qlock)return;qlock=true;const ok=o.textContent==q[1];
+  $$('#qo .opt').forEach(x=>{if(x.textContent==q[1])x.classList.add('ok')});
+  if(ok){sOk();qs++;add(10);qres[qi]=1;$('#qfb').innerHTML='<span class="good">🎉 بالکل صحیح! (+10)</span> '+q[3]}
+  else{sNo();o.classList.add('no','shake');qres[qi]=0;$('#qfb').innerHTML='<span class="bad">❌ غلط۔</span> '+q[3]}
+  setTimeout(()=>{qi++;qrender()},2200)})}
+
+/* name */
+$('#name').oninput=e=>{$('#cname').textContent=e.target.value||'پیارے طالب علم'};
+ui();
+</script>
+</body>
+</html>
